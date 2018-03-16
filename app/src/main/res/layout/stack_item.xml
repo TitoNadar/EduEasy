@@ -59,6 +59,8 @@
             android:text="Score:"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:id="@+id/score_text_view"
+            android:visibility="invisible"
             android:layout_gravity="left"
             android:layout_marginLeft="10dp"
             android:textColor="#000000"

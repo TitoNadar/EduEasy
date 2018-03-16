@@ -14,6 +14,7 @@ import java.util.List;
 
 import retrofit.Callback;
 import retrofit.Retrofit;
+import tito.example.com.edueasy.Adapter.StackAdapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.Stack_Service;
 import tito.example.com.edueasy.Modal.StackOverFlow.ItemsItem;
@@ -49,6 +50,8 @@ List<ItemsItem> stackresponse=new ArrayList<>();
                 @Override
                 public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
                     stackresponse=response.body().getItems();
+                    StackAdapter adapter=new StackAdapter(getActivity(),stackresponse);
+                    recyclerView.setAdapter(adapter);
                 }
 
                 @Override
