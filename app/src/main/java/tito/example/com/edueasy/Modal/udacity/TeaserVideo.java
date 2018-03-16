@@ -1,4 +1,4 @@
-package tito.example.com.edueasy.Modal.udacity_Modal;
+package tito.example.com.edueasy.Modal.udacity;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;

@@ -1,11 +1,11 @@
-package tito.example.com.edueasy.Modal.udacity_Modal;
+package tito.example.com.edueasy.Modal.udacity;
 
 import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("com.robohorse.robopojogenerator")
-public class CoursesItem{
+public class DegreesItem{
 
 	@SerializedName("syllabus")
 	private String syllabus;
@@ -20,7 +20,7 @@ public class CoursesItem{
 	private String title;
 
 	@SerializedName("instructors")
-	private List<InstructorsItem> instructors;
+	private List<Object> instructors;
 
 	@SerializedName("faq")
 	private String faq;
@@ -80,7 +80,7 @@ public class CoursesItem{
 	private TeaserVideo teaserVideo;
 
 	@SerializedName("affiliates")
-	private List<AffiliatesItem> affiliates;
+	private List<Object> affiliates;
 
 	@SerializedName("full_course_available")
 	private boolean fullCourseAvailable;
@@ -120,11 +120,11 @@ public class CoursesItem{
 		return title;
 	}
 
-	public void setInstructors(List<InstructorsItem> instructors){
+	public void setInstructors(List<Object> instructors){
 		this.instructors = instructors;
 	}
 
-	public List<InstructorsItem> getInstructors(){
+	public List<Object> getInstructors(){
 		return instructors;
 	}
 
@@ -280,11 +280,11 @@ public class CoursesItem{
 		return teaserVideo;
 	}
 
-	public void setAffiliates(List<AffiliatesItem> affiliates){
+	public void setAffiliates(List<Object> affiliates){
 		this.affiliates = affiliates;
 	}
 
-	public List<AffiliatesItem> getAffiliates(){
+	public List<Object> getAffiliates(){
 		return affiliates;
 	}
 
@@ -307,7 +307,7 @@ public class CoursesItem{
 	@Override
  	public String toString(){
 		return 
-			"CoursesItem{" + 
+			"DegreesItem{" + 
 			"syllabus = '" + syllabus + '\'' + 
 			",featured = '" + featured + '\'' + 
 			",project_name = '" + projectName + '\'' + 
