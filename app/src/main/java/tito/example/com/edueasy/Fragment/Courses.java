@@ -54,9 +54,10 @@ public class Courses extends Fragment {
             recyclerView = view.findViewById(R.id.recyclerview);
             layoutManager=new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
-           udacity_service=Common.getUdacityCourses();
-
+           finalList.clear();
+            udacity_service=Common.getUdacityCourses();
            udacity_service.getUdacityService().enqueue(new Callback<Response>() {
+
                @Override
                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                    udacity_response=response.body().getCourses();
