@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.Retrofit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 import tito.example.com.edueasy.Adapter.Courses_Adapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.IversitySErvice;
@@ -56,37 +58,42 @@ public class Courses extends Fragment {
 
            udacity_service.getUdacityService().enqueue(new Callback<Response>() {
                @Override
-               public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
+               public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                    udacity_response=response.body().getCourses();
-              for(int i=0;i<5;i++)
-              {
-                  Final f=new Final(udacity_response.get(i).getProjectName(),udacity_response.get(i).getProjectDescription(),udacity_response.get(i).getImage(),udacity_response.get(i).getHomepage());
-                  finalList.add(f);
-              }
+                   for(int i=0;i<5;i++)
+                   {
+                       Final f=new Final(udacity_response.get(i).getProjectName(),udacity_response.get(i).getProjectDescription(),udacity_response.get(i).getImage(),udacity_response.get(i).getHomepage());
+                       finalList.add(f);
+                   }
                }
+
                @Override
-               public void onFailure(Throwable t) {
+               public void onFailure(Call<Response> call, Throwable t) {
+
                }
            });
+
         iversitySErvice=Common.getIversityCourses();
-        iversitySErvice.getIversityService().enqueue(new Callback<tito.example.com.edueasy.Modal.Iversity.Response>() {
-            @Override
-            public void onResponse(retrofit.Response<tito.example.com.edueasy.Modal.Iversity.Response> response, Retrofit retrofit) {
-                iversity_response=response.body().getCourses();
-                for(int i=0;i<5;i++)
-                {
-                    Final f=new Final(iversity_response.get(i).getTitle(),iversity_response.get(i).getDescription(),iversity_response.get(i).getImage(),iversity_response.get(i).getUrl());
-                    finalList.add(f);
-                }
-                Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),finalList);
-                recyclerView.setAdapter(courses_adapter);
-            }
+       iversitySErvice.getIversityService().enqueue(new Callback<tito.example.com.edueasy.Modal.Iversity.Response>() {
+           @Override
+           public void onResponse(Call<tito.example.com.edueasy.Modal.Iversity.Response> call, retrofit2.Response<tito.example.com.edueasy.Modal.Iversity.Response> response) {
+               iversity_response=response.body().getCourses();
+               for(int i=0;i<5;i++)
+               {
+                   Final f=new Final(iversity_response.get(i).getTitle(),iversity_response.get(i).getDescription(),iversity_response.get(i).getImage(),iversity_response.get(i).getUrl());
+                   finalList.add(f);
+               }
+               Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),finalList);
+               recyclerView.setAdapter(courses_adapter);
+           }
 
-            @Override
-            public void onFailure(Throwable t) {
+           @Override
+           public void onFailure(Call<tito.example.com.edueasy.Modal.Iversity.Response> call, Throwable t) {
 
-            }
-        });
+           }
+       });
+
+
 
         return view;
     }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 import tito.example.com.edueasy.Adapter.StackAdapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.Stack_Service;
@@ -48,14 +50,14 @@ List<ItemsItem> stackresponse=new ArrayList<>();
             stack_service= Common.getStackDoubts();
             stack_service.getStackService().enqueue(new Callback<Response>() {
                 @Override
-                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
+                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                     stackresponse=response.body().getItems();
                     StackAdapter adapter=new StackAdapter(getActivity(),stackresponse);
                     recyclerView.setAdapter(adapter);
                 }
 
                 @Override
-                public void onFailure(Throwable t) {
+                public void onFailure(Call<Response> call, Throwable t) {
 
                 }
             });

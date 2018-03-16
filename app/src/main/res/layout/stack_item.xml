@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="Solution"
             android:textSize="14sp"
+            android:autoLink="web"
             android:layout_gravity="left"
             android:layout_marginLeft="10dp"
             android:textColor="#000000"

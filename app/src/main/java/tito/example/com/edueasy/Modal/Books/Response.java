@@ -62,15 +62,15 @@ public class Response{
 		return books;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"Response{" + 
-			"total = '" + total + '\'' + 
-			",error = '" + error + '\'' + 
-			",time = '" + time + '\'' + 
-			",page = '" + page + '\'' + 
-			",books = '" + books + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"Response{" +
+//			"total = '" + total + '\'' +
+//			",error = '" + error + '\'' +
+//			",time = '" + time + '\'' +
+//			",page = '" + page + '\'' +
+//			",books = '" + books + '\'' +
+//			"}";
+//		}
 }

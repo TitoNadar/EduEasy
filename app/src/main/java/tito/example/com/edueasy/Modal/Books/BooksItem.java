@@ -72,16 +72,16 @@ public class BooksItem{
 		return subTitle;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"BooksItem{" + 
-			"description = '" + description + '\'' + 
-			",isbn = '" + isbn + '\'' + 
-			",title = '" + title + '\'' + 
-			",iD = '" + iD + '\'' + 
-			",image = '" + image + '\'' + 
-			",subTitle = '" + subTitle + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"BooksItem{" +
+//			"description = '" + description + '\'' +
+//			",isbn = '" + isbn + '\'' +
+//			",title = '" + title + '\'' +
+//			",iD = '" + iD + '\'' +
+//			",image = '" + image + '\'' +
+//			",subTitle = '" + subTitle + '\'' +
+//			"}";
+//		}
 }

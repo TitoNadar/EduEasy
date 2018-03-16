@@ -5,16 +5,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
 import tito.example.com.edueasy.Adapter.BooksAdapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.Book_Service;
@@ -31,6 +31,7 @@ public class Books extends Fragment {
    RecyclerView.LayoutManager layoutManager;
 Book_Service book_service;
 List<BooksItem> responses=new ArrayList<>();
+
    public Books() {
     }
 
@@ -46,20 +47,21 @@ List<BooksItem> responses=new ArrayList<>();
         recyclerView = view.findViewById(R.id.recyclerview);
         layoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        book_service= Common.getBooks();
-        book_service.getBookService().enqueue(new Callback<Response>() {
-            @Override
-            public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
-          responses=response.body().getBooks();
-                BooksAdapter adapter=new BooksAdapter(getActivity(),responses);
-                recyclerView.setAdapter(adapter);
-            }
+         book_service=Common.getBooks();
+          book_service.getBooksService().enqueue(new Callback<Response>() {
+              @Override
+              public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                  Log.d("error",response.raw()+"");
+                  responses=response.body().getBooks();
+                  BooksAdapter adapter=new BooksAdapter(getActivity(),responses);
+                  recyclerView.setAdapter(adapter);
+              }
 
-            @Override
-            public void onFailure(Throwable t) {
-
-            }
-        });
+              @Override
+              public void onFailure(Call<Response> call, Throwable t) {
+        Log.d("divyam",t.getMessage());
+              }
+          });
         return view;
     }
 }

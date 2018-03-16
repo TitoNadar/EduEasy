@@ -2,6 +2,7 @@ package tito.example.com.edueasy.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ ItemClickListener itemClickListener;
         super(itemView);
         question=itemView.findViewById(R.id.question);
         solution=itemView.findViewById(R.id.solution);
+        solution.setMovementMethod(LinkMovementMethod.getInstance());
         score=itemView.findViewById(R.id.score);
         score_text_view=itemView.findViewById(R.id.score_text_view);
         itemView.setOnClickListener(this);
@@ -62,12 +64,12 @@ public class StackAdapter extends RecyclerView.Adapter<StackViewHolder> {
      if(queries.get(position).isIsAnswered())
      {
          holder.score_text_view.setVisibility(View.VISIBLE);
-         holder.score.setText(queries.get(position).getScore());
+         holder.score.setText(queries.get(position).getScore()+"");
      }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return queries.size();
     }
 }

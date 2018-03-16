@@ -1,7 +1,7 @@
 package tito.example.com.edueasy.Interface;
 
-import retrofit.Call;
-import retrofit.http.GET;
+import retrofit2.Call;
+import retrofit2.http.GET;
 import tito.example.com.edueasy.Modal.Books.Response;
 
 /**
@@ -9,9 +9,9 @@ import tito.example.com.edueasy.Modal.Books.Response;
  */
 
 public interface Book_Service {
-@GET("v1/search/android")
-    Call<Response> getBookService();
-@GET("v1/search/")
-    Call<Response> getSpecialBooksService();
+
+
+@GET("android")
+    Call<Response> getBooksService();
 
 }

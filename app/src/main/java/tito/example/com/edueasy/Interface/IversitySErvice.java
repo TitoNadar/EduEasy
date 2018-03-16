@@ -1,7 +1,7 @@
 package tito.example.com.edueasy.Interface;
 
-import retrofit.Call;
-import retrofit.http.GET;
+import retrofit2.Call;
+import retrofit2.http.GET;
 import tito.example.com.edueasy.Modal.Iversity.Response;
 
 /**
