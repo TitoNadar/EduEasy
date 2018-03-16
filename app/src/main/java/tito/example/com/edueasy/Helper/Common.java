@@ -12,6 +12,7 @@ import tito.example.com.edueasy.Remote.RetrofitClient;
 public class Common {
     private static String Udacity_Url="https://www.udacity.com/public-api/v0/";
     private static String Iversity_Url="https://iversity.org/api/v1/";
+    private static String Books_Url="http://it-ebooks-api.info/";
    private static String StackOverFlow="https://api.stackexchange.com/2.2/search/advanced?order=desc&site=stackoverflow&accepted=False&sort=activity";
     public static Udacity_Service getUdacityCourses()
     {
