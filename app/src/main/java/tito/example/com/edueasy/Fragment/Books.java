@@ -8,14 +8,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import retrofit.Callback;
 import retrofit.Retrofit;
+import tito.example.com.edueasy.Adapter.BooksAdapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.Book_Service;
+import tito.example.com.edueasy.Modal.Books.BooksItem;
 import tito.example.com.edueasy.Modal.Books.Response;
 import tito.example.com.edueasy.R;
 
@@ -27,7 +30,7 @@ public class Books extends Fragment {
    RecyclerView recyclerView;
    RecyclerView.LayoutManager layoutManager;
 Book_Service book_service;
-List<Response> responses=new ArrayList<>();
+List<BooksItem> responses=new ArrayList<>();
    public Books() {
     }
 
@@ -47,7 +50,9 @@ List<Response> responses=new ArrayList<>();
         book_service.getBookService().enqueue(new Callback<Response>() {
             @Override
             public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
-
+          responses=response.body().getBooks();
+                BooksAdapter adapter=new BooksAdapter(getActivity(),responses);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override

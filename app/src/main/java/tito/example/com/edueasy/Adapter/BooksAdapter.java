@@ -7,7 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tito.example.com.edueasy.Interface.ItemClickListener;
+import tito.example.com.edueasy.Modal.Books.BooksItem;
 import tito.example.com.edueasy.R;
 
 /**
@@ -20,10 +24,10 @@ class Book_View_Holder extends RecyclerView.ViewHolder implements View.OnClickLi
     public Book_View_Holder(View itemView) {
         super(itemView);
         itemView.setOnClickListener(this);
-        title=itemView.findViewById(R.id.title);
-        subtitle=itemView.findViewById(R.id.subtitle);
-        authorname=itemView.findViewById(R.id.authorname);
-        pageno=itemView.findViewById(R.id.pageno);
+        title=itemView.findViewById(R.id.book_title);
+        subtitle=itemView.findViewById(R.id.book_subtitle);
+        authorname=itemView.findViewById(R.id.book_author_name);
+        pageno=itemView.findViewById(R.id.book_page_no);
     }
 
     @Override
@@ -38,6 +42,12 @@ class Book_View_Holder extends RecyclerView.ViewHolder implements View.OnClickLi
 
 public class BooksAdapter extends RecyclerView.Adapter<Book_View_Holder> {
     private Context context;
+    private List<BooksItem> booksItems=new ArrayList<>();
+
+    public BooksAdapter(Context context, List<BooksItem> booksItems) {
+        this.context = context;
+        this.booksItems = booksItems;
+    }
 
     @Override
     public Book_View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -48,7 +58,9 @@ public class BooksAdapter extends RecyclerView.Adapter<Book_View_Holder> {
 
     @Override
     public void onBindViewHolder(Book_View_Holder holder, int position) {
-
+       holder.title.setText(booksItems.get(position).getTitle());
+       holder.subtitle.setText(booksItems.get(position).getSubTitle());
+       holder.pageno.setText("300");
     }
 
     @Override
