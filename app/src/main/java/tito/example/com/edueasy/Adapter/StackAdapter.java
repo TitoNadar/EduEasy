@@ -3,15 +3,19 @@ package tito.example.com.edueasy.Adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import tito.example.com.edueasy.R;
 
 /**
  * Created by tito on 16/3/18.
  */
 class StackViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
+TextView question,solution,score;
     public StackViewHolder(View itemView)
     {
         super(itemView);
+        question=itemView.findViewById(R.id.q)
     }
 
     @Override
