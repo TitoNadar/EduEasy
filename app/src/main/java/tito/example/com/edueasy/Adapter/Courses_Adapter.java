@@ -1,6 +1,7 @@
 package tito.example.com.edueasy.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import tito.example.com.edueasy.CoursesDetailedActivity;
 import tito.example.com.edueasy.Interface.ItemClickListener;
 import tito.example.com.edueasy.Modal.udacity.CoursesItem;
 import tito.example.com.edueasy.R;
@@ -73,7 +75,12 @@ holder.coursedescription.setText(coursesItems.get(position).getProjectDescriptio
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-                Log.d("done","success");
+                Intent intent=new Intent(context, CoursesDetailedActivity.class);
+                intent.putExtra("name",coursesItems.get(position).getTitle());
+                intent.putExtra("image",coursesItems.get(position).getImage());
+                intent.putExtra("description",coursesItems.get(position).getImage());
+                intent.putExtra("url",coursesItems.get(position).getHomepage());
+                context.startActivity(intent);
             }
         });
     }

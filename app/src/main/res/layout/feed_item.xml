@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView android:layout_width="match_parent"
-    android:layout_height="90dp"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="20dp"
+    android:layout_margin="8dp"
+    android:id="@+id/course_card"
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:cardCornerRadius="4dp"
     app:cardElevation="5dp">
@@ -18,10 +18,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/Course_imageview"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="17dp"
                 android:scaleType="centerCrop"
@@ -41,10 +41,11 @@
                 android:layout_height="wrap_content"
                 android:text="Course_Name"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:layout_gravity="left"
                 android:id="@+id/Course_name"
-                android:layout_marginRight="14dp" />
+                android:layout_marginTop="15dp"
+                android:textColor="#000000"/>
 
             <TextView
                 android:layout_width="wrap_content"

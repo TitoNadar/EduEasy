@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Name:"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:id="@+id/Course_name2"/>
+
+    <ImageView
+        android:id="@+id/Course_imageview2"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Course_name2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:id="@+id/Course_description_2"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/Course_imageview2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Syllabus:"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:id="@+id/Course_syllabus"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/Course_description_2"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

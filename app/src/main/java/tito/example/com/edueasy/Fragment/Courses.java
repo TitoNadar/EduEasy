@@ -57,8 +57,8 @@ public class Courses extends Fragment {
                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
 
                    udacity_response=response.body().getCourses();
-                   Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),udacity_response);
-                   recyclerView.setAdapter(courses_adapter);
+
+
                }
 
                @Override
@@ -71,7 +71,8 @@ public class Courses extends Fragment {
             @Override
             public void onResponse(retrofit.Response<tito.example.com.edueasy.Modal.Iversity.Response> response, Retrofit retrofit) {
                 iversity_response=response.body().getCourses();
-
+                Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),udacity_response,iversity_response);
+                recyclerView.setAdapter(courses_adapter);
             }
 
             @Override
