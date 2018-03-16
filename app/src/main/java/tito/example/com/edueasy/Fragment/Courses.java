@@ -17,6 +17,7 @@ import retrofit.Callback;
 import retrofit.Retrofit;
 import tito.example.com.edueasy.Adapter.Courses_Adapter;
 import tito.example.com.edueasy.Helper.Common;
+import tito.example.com.edueasy.Interface.IversitySErvice;
 import tito.example.com.edueasy.Interface.Udacity_Service;
 import tito.example.com.edueasy.Modal.udacity.CoursesItem;
 import tito.example.com.edueasy.Modal.udacity.Response;
@@ -30,8 +31,9 @@ public class Courses extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     List<CoursesItem> udacity_response=new ArrayList<>();
+    List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> iversity_response=new ArrayList<>();
     Udacity_Service udacity_service;
-
+   IversitySErvice iversitySErvice;
     public Courses() {
     }
 
@@ -49,6 +51,7 @@ public class Courses extends Fragment {
             layoutManager=new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
            udacity_service=Common.getUdacityCourses();
+
            udacity_service.getUdacityService().enqueue(new Callback<Response>() {
                @Override
                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
@@ -63,6 +66,20 @@ public class Courses extends Fragment {
 
                }
            });
+        iversitySErvice=Common.getIversityCourses();
+        iversitySErvice.getIversityService().enqueue(new Callback<tito.example.com.edueasy.Modal.Iversity.Response>() {
+            @Override
+            public void onResponse(retrofit.Response<tito.example.com.edueasy.Modal.Iversity.Response> response, Retrofit retrofit) {
+                iversity_response=response.body().getCourses();
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+            }
+        });
+
         return view;
     }
 }

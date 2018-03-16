@@ -50,10 +50,12 @@ class Courses_View_Holder extends RecyclerView.ViewHolder implements View.OnClic
 public class Courses_Adapter extends RecyclerView.Adapter<Courses_View_Holder> {
 private Context context;
 private List<CoursesItem> coursesItems=new ArrayList<>();
+private List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> coursesItemsIversity=new ArrayList<>();
 
-    public Courses_Adapter(Context context, List<CoursesItem> coursesItems) {
+    public Courses_Adapter(Context context, List<CoursesItem> coursesItems, List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> coursesItemsIversity) {
         this.context = context;
         this.coursesItems = coursesItems;
+        this.coursesItemsIversity = coursesItemsIversity;
     }
 
     @Override
