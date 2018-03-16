@@ -9,6 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.Retrofit;
+import tito.example.com.edueasy.Helper.Common;
+import tito.example.com.edueasy.Interface.Stack_Service;
+import tito.example.com.edueasy.Modal.StackOverFlow.ItemsItem;
+import tito.example.com.edueasy.Modal.StackOverFlow.Response;
 import tito.example.com.edueasy.R;
 
 /**
@@ -18,7 +27,8 @@ import tito.example.com.edueasy.R;
 public class StackOverflow extends Fragment {
 RecyclerView recyclerView;
 RecyclerView.LayoutManager layoutManager;
-
+Stack_Service stack_service;
+List<ItemsItem> stackresponse=new ArrayList<>();
     public StackOverflow() {
     }
 
@@ -34,6 +44,18 @@ RecyclerView.LayoutManager layoutManager;
             recyclerView = view.findViewById(R.id.recyclerview);
             layoutManager=new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
+            stack_service= Common.getStackDoubts();
+            stack_service.getStackService().enqueue(new Callback<Response>() {
+                @Override
+                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
+                    stackresponse=response.body().getItems();
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+
+                }
+            });
         return view;
     }
 }

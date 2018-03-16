@@ -18,7 +18,8 @@ import tito.example.com.edueasy.R;
 public class Books extends Fragment {
    RecyclerView recyclerView;
    RecyclerView.LayoutManager layoutManager;
-    public Books() {
+
+   public Books() {
     }
 
     @Override
