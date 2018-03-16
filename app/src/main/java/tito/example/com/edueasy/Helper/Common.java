@@ -10,7 +10,7 @@ import tito.example.com.edueasy.Remote.RetrofitClient;
 public class Common {
     private static String Udacity_Url="http://jsonviewer.stack.hu/";
 
-    public static Udacity_Service getUdacityService()
+    public static Udacity_Service getUdacityCourses()
     {
         return RetrofitClient.getclient(Udacity_Url).create(Udacity_Service.class);
     }

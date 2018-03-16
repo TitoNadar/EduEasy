@@ -9,6 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.Retrofit;
+import tito.example.com.edueasy.Adapter.Courses_Adapter;
+import tito.example.com.edueasy.Helper.Common;
+import tito.example.com.edueasy.Interface.Udacity_Service;
+import tito.example.com.edueasy.Modal.udacity.CoursesItem;
+import tito.example.com.edueasy.Modal.udacity.Response;
 import tito.example.com.edueasy.R;
 
 /**
@@ -18,7 +28,8 @@ import tito.example.com.edueasy.R;
 public class Courses extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-
+    List<CoursesItem> udacity_response=new ArrayList<>();
+    Udacity_Service udacity_service;
     public Courses() {
     }
 
@@ -34,6 +45,19 @@ public class Courses extends Fragment {
             recyclerView = view.findViewById(R.id.recyclerview);
             layoutManager=new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
+            udacity_service=Common.getUdacityCourses().getUdacityService().enqueue(new Callback<Response>() {
+                @Override
+                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
+                    udacity_response=response.body().getCourses();
+                    Courses_Adapter adapter=new Courses_Adapter(getActivity(),udacity_response);
+                    recyclerView.setAdapter(adapter);
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+
+                }
+            });
         return view;
     }
 }

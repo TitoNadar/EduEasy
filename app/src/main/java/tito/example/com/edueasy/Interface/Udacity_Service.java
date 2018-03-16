@@ -1,5 +1,6 @@
 package tito.example.com.edueasy.Interface;
 
+import retrofit.Call;
 import retrofit.http.GET;
 import tito.example.com.edueasy.Modal.udacity.Response;
 
@@ -9,6 +10,6 @@ import tito.example.com.edueasy.Modal.udacity.Response;
  */
 
 public interface Udacity_Service {
-    @GET()
-    Class<Response> getResponse();
+    @GET(" ")
+    Call<Response> getUdacityService();
 }
