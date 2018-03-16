@@ -28,12 +28,12 @@ public class AffiliatesItem{
 		return name;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"AffiliatesItem{" + 
-			"image = '" + image + '\'' + 
-			",name = '" + name + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"AffiliatesItem{" +
+//			"image = '" + image + '\'' +
+//			",name = '" + name + '\'' +
+//			"}";
+//		}
 }

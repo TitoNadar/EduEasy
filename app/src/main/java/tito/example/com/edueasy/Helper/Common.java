@@ -8,7 +8,7 @@ import tito.example.com.edueasy.Remote.RetrofitClient;
  */
 
 public class Common {
-    private static String Udacity_Url="http://jsonviewer.stack.hu/";
+    private static String Udacity_Url="https://www.udacity.com/public-api/v0/";
 
     public static Udacity_Service getUdacityCourses()
     {

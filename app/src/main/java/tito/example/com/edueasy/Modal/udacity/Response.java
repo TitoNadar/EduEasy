@@ -40,13 +40,13 @@ public class Response{
 		return degrees;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"Response{" + 
-			"courses = '" + courses + '\'' + 
-			",tracks = '" + tracks + '\'' + 
-			",degrees = '" + degrees + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"Response{" +
+//			"courses = '" + courses + '\'' +
+//			",tracks = '" + tracks + '\'' +
+//			",degrees = '" + degrees + '\'' +
+//			"}";
+//		}
 }

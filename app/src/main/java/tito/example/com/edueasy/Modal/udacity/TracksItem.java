@@ -40,13 +40,13 @@ public class TracksItem{
 		return description;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"TracksItem{" + 
-			"courses = '" + courses + '\'' + 
-			",name = '" + name + '\'' + 
-			",description = '" + description + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"TracksItem{" +
+//			"courses = '" + courses + '\'' +
+//			",name = '" + name + '\'' +
+//			",description = '" + description + '\'' +
+//			"}";
+//		}
 }

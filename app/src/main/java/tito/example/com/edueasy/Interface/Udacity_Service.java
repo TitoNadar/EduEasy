@@ -10,6 +10,6 @@ import tito.example.com.edueasy.Modal.udacity.Response;
  */
 
 public interface Udacity_Service {
-    @GET(" ")
+    @GET("courses")
     Call<Response> getUdacityService();
 }

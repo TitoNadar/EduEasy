@@ -304,37 +304,37 @@ public class CoursesItem{
 		return homepage;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"CoursesItem{" + 
-			"syllabus = '" + syllabus + '\'' + 
-			",featured = '" + featured + '\'' + 
-			",project_name = '" + projectName + '\'' + 
-			",title = '" + title + '\'' + 
-			",instructors = '" + instructors + '\'' + 
-			",faq = '" + faq + '\'' + 
-			",expected_duration_unit = '" + expectedDurationUnit + '\'' + 
-			",expected_duration = '" + expectedDuration + '\'' + 
-			",required_knowledge = '" + requiredKnowledge + '\'' + 
-			",banner_image = '" + bannerImage + '\'' + 
-			",key = '" + key + '\'' + 
-			",short_summary = '" + shortSummary + '\'' + 
-			",slug = '" + slug + '\'' + 
-			",summary = '" + summary + '\'' + 
-			",image = '" + image + '\'' + 
-			",starter = '" + starter + '\'' + 
-			",level = '" + level + '\'' + 
-			",related_degree_keys = '" + relatedDegreeKeys + '\'' + 
-			",tracks = '" + tracks + '\'' + 
-			",project_description = '" + projectDescription + '\'' + 
-			",new_release = '" + newRelease + '\'' + 
-			",subtitle = '" + subtitle + '\'' + 
-			",expected_learning = '" + expectedLearning + '\'' + 
-			",teaser_video = '" + teaserVideo + '\'' + 
-			",affiliates = '" + affiliates + '\'' + 
-			",full_course_available = '" + fullCourseAvailable + '\'' + 
-			",homepage = '" + homepage + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"CoursesItem{" +
+//			"syllabus = '" + syllabus + '\'' +
+//			",featured = '" + featured + '\'' +
+//			",project_name = '" + projectName + '\'' +
+//			",title = '" + title + '\'' +
+//			",instructors = '" + instructors + '\'' +
+//			",faq = '" + faq + '\'' +
+//			",expected_duration_unit = '" + expectedDurationUnit + '\'' +
+//			",expected_duration = '" + expectedDuration + '\'' +
+//			",required_knowledge = '" + requiredKnowledge + '\'' +
+//			",banner_image = '" + bannerImage + '\'' +
+//			",key = '" + key + '\'' +
+//			",short_summary = '" + shortSummary + '\'' +
+//			",slug = '" + slug + '\'' +
+//			",summary = '" + summary + '\'' +
+//			",image = '" + image + '\'' +
+//			",starter = '" + starter + '\'' +
+//			",level = '" + level + '\'' +
+//			",related_degree_keys = '" + relatedDegreeKeys + '\'' +
+//			",tracks = '" + tracks + '\'' +
+//			",project_description = '" + projectDescription + '\'' +
+//			",new_release = '" + newRelease + '\'' +
+//			",subtitle = '" + subtitle + '\'' +
+//			",expected_learning = '" + expectedLearning + '\'' +
+//			",teaser_video = '" + teaserVideo + '\'' +
+//			",affiliates = '" + affiliates + '\'' +
+//			",full_course_available = '" + fullCourseAvailable + '\'' +
+//			",homepage = '" + homepage + '\'' +
+//			"}";
+//		}
 }

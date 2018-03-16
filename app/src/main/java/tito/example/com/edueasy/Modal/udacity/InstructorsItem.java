@@ -39,13 +39,13 @@ public class InstructorsItem{
 		return bio;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"InstructorsItem{" + 
-			"image = '" + image + '\'' + 
-			",name = '" + name + '\'' + 
-			",bio = '" + bio + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"InstructorsItem{" +
+//			"image = '" + image + '\'' +
+//			",name = '" + name + '\'' +
+//			",bio = '" + bio + '\'' +
+//			"}";
+//		}
 }

@@ -17,11 +17,11 @@ public class TeaserVideo{
 		return youtubeUrl;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"TeaserVideo{" + 
-			"youtube_url = '" + youtubeUrl + '\'' + 
-			"}";
-		}
+//	@Override
+// 	public String toString(){
+//		return
+//			"TeaserVideo{" +
+//			"youtube_url = '" + youtubeUrl + '\'' +
+//			"}";
+//		}
 }
