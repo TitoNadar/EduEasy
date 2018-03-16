@@ -1,5 +1,6 @@
 package tito.example.com.edueasy.Helper;
 
+import tito.example.com.edueasy.Interface.Book_Service;
 import tito.example.com.edueasy.Interface.IversitySErvice;
 import tito.example.com.edueasy.Interface.Stack_Service;
 import tito.example.com.edueasy.Interface.Udacity_Service;
@@ -26,5 +27,8 @@ public class Common {
     {
         return RetrofitClient.getclient(StackOverFlow).create(Stack_Service.class);
     }
-
+    public static Book_Service getBooks()
+    {
+        return RetrofitClient.getclient(Books_Url).create(Book_Service.class);
+    }
 }
