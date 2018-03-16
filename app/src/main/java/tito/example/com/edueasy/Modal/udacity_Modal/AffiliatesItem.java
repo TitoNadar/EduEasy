@@ -1,19 +1,16 @@
-package tito.example.com.edueasy.Modal;
+package tito.example.com.edueasy.Modal.udacity_Modal;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
 @Generated("com.robohorse.robopojogenerator")
-public class InstructorsItem{
+public class AffiliatesItem{
 
 	@SerializedName("image")
 	private String image;
 
 	@SerializedName("name")
 	private String name;
-
-	@SerializedName("bio")
-	private String bio;
 
 	public void setImage(String image){
 		this.image = image;
@@ -31,21 +28,12 @@ public class InstructorsItem{
 		return name;
 	}
 
-	public void setBio(String bio){
-		this.bio = bio;
-	}
-
-	public String getBio(){
-		return bio;
-	}
-
 	@Override
  	public String toString(){
 		return 
-			"InstructorsItem{" + 
+			"AffiliatesItem{" + 
 			"image = '" + image + '\'' + 
 			",name = '" + name + '\'' + 
-			",bio = '" + bio + '\'' + 
 			"}";
 		}
 }

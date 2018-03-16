@@ -1,4 +1,4 @@
-package tito.example.com.edueasy.Modal;
+package tito.example.com.edueasy.Modal.udacity_Modal;
 
 import java.util.List;
 import javax.annotation.Generated;
