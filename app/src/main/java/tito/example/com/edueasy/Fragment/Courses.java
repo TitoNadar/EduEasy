@@ -19,6 +19,7 @@ import tito.example.com.edueasy.Adapter.Courses_Adapter;
 import tito.example.com.edueasy.Helper.Common;
 import tito.example.com.edueasy.Interface.IversitySErvice;
 import tito.example.com.edueasy.Interface.Udacity_Service;
+import tito.example.com.edueasy.Modal.General.Final;
 import tito.example.com.edueasy.Modal.udacity.CoursesItem;
 import tito.example.com.edueasy.Modal.udacity.Response;
 import tito.example.com.edueasy.R;
@@ -32,6 +33,7 @@ public class Courses extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     List<CoursesItem> udacity_response=new ArrayList<>();
     List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> iversity_response=new ArrayList<>();
+    List<Final> finalList=new ArrayList<>();
     Udacity_Service udacity_service;
    IversitySErvice iversitySErvice;
     public Courses() {
@@ -55,15 +57,14 @@ public class Courses extends Fragment {
            udacity_service.getUdacityService().enqueue(new Callback<Response>() {
                @Override
                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
-
                    udacity_response=response.body().getCourses();
-
-
+              for(int i=0;i<5;i++)
+              {
+                  Final f=new Final(udacity_response.get(i).getProjectName(),udacity_response.get(i).getProjectDescription(),udacity_response.get(i).getImage());
+              }
                }
-
                @Override
                public void onFailure(Throwable t) {
-
                }
            });
         iversitySErvice=Common.getIversityCourses();
@@ -71,6 +72,7 @@ public class Courses extends Fragment {
             @Override
             public void onResponse(retrofit.Response<tito.example.com.edueasy.Modal.Iversity.Response> response, Retrofit retrofit) {
                 iversity_response=response.body().getCourses();
+
                 Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),udacity_response,iversity_response);
                 recyclerView.setAdapter(courses_adapter);
             }
