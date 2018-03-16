@@ -20,6 +20,10 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import tito.example.com.edueasy.Fragment.Books;
+import tito.example.com.edueasy.Fragment.Courses;
+import tito.example.com.edueasy.Fragment.StackOverflow;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,8 +38,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                
             }
         });
 
@@ -107,9 +110,9 @@ public class MainActivity extends AppCompatActivity
     }
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new WaterFragment(), "Water");
-        adapter.addFragment(new AirFragment(), "Air");
-        adapter.addFragment(new SoilFragment(), "Soil");
+        adapter.addFragment(new Courses(), "Courses");
+        adapter.addFragment(new Books(), "Books");
+        adapter.addFragment(new StackOverflow(), "StackOverflow");
         viewPager.setAdapter(adapter);
     }
     static class Adapter extends FragmentPagerAdapter {
