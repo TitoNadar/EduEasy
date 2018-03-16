@@ -18,6 +18,7 @@ import java.util.List;
 
 import tito.example.com.edueasy.CoursesDetailedActivity;
 import tito.example.com.edueasy.Interface.ItemClickListener;
+import tito.example.com.edueasy.Modal.General.Final;
 import tito.example.com.edueasy.Modal.udacity.CoursesItem;
 import tito.example.com.edueasy.R;
 
@@ -51,13 +52,11 @@ class Courses_View_Holder extends RecyclerView.ViewHolder implements View.OnClic
 
 public class Courses_Adapter extends RecyclerView.Adapter<Courses_View_Holder> {
 private Context context;
-private List<CoursesItem> coursesItems=new ArrayList<>();
-private List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> coursesItemsIversity=new ArrayList<>();
+private List<Final> finals=new ArrayList<>();
 
-    public Courses_Adapter(Context context, List<CoursesItem> coursesItems, List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> coursesItemsIversity) {
+    public Courses_Adapter(Context context, List<Final> finals) {
         this.context = context;
-        this.coursesItems = coursesItems;
-        this.coursesItemsIversity = coursesItemsIversity;
+        this.finals = finals;
     }
 
     @Override
@@ -69,17 +68,17 @@ private List<tito.example.com.edueasy.Modal.Iversity.CoursesItem> coursesItemsIv
 
     @Override
     public void onBindViewHolder(Courses_View_Holder holder, int position) {
-holder.coursename.setText(coursesItems.get(position).getTitle());
-holder.coursedescription.setText(coursesItems.get(position).getProjectDescription());
-        Picasso.get().load(coursesItems.get(position).getImage()).into(holder.courseImage);
+holder.coursename.setText(finals.get(position).getCoursename());
+holder.coursedescription.setText(finals.get(position).getCoursedescription());
+        Picasso.get().load(finals.get(position).getCourseimage()).into(holder.courseImage);
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent=new Intent(context, CoursesDetailedActivity.class);
-                intent.putExtra("name",coursesItems.get(position).getTitle());
-                intent.putExtra("image",coursesItems.get(position).getImage());
-                intent.putExtra("description",coursesItems.get(position).getImage());
-                intent.putExtra("url",coursesItems.get(position).getHomepage());
+                intent.putExtra("name",finals.get(position).getCoursename());
+                intent.putExtra("image",finals.get(position).getCoursedescription());
+                intent.putExtra("description",finals.get(position).getCourseimage());
+                intent.putExtra("url",finals.get(position).getUrl());
                 context.startActivity(intent);
             }
         });
@@ -87,6 +86,6 @@ holder.coursedescription.setText(coursesItems.get(position).getProjectDescriptio
 
     @Override
     public int getItemCount() {
-        return coursesItems.size();
+        return finals.size();
     }
 }

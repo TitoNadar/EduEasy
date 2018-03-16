@@ -60,7 +60,8 @@ public class Courses extends Fragment {
                    udacity_response=response.body().getCourses();
               for(int i=0;i<5;i++)
               {
-                  Final f=new Final(udacity_response.get(i).getProjectName(),udacity_response.get(i).getProjectDescription(),udacity_response.get(i).getImage());
+                  Final f=new Final(udacity_response.get(i).getProjectName(),udacity_response.get(i).getProjectDescription(),udacity_response.get(i).getImage(),udacity_response.get(i).getHomepage());
+                  finalList.add(f);
               }
                }
                @Override
@@ -72,8 +73,12 @@ public class Courses extends Fragment {
             @Override
             public void onResponse(retrofit.Response<tito.example.com.edueasy.Modal.Iversity.Response> response, Retrofit retrofit) {
                 iversity_response=response.body().getCourses();
-
-                Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),udacity_response,iversity_response);
+                for(int i=0;i<5;i++)
+                {
+                    Final f=new Final(iversity_response.get(i).getTitle(),iversity_response.get(i).getDescription(),iversity_response.get(i).getImage(),iversity_response.get(i).getUrl());
+                    finalList.add(f);
+                }
+                Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),finalList);
                 recyclerView.setAdapter(courses_adapter);
             }
 

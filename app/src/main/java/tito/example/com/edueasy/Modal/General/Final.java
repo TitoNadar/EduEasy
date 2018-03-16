@@ -10,6 +10,7 @@ public class Final {
     private String coursename;
     private String coursedescription;
     private String courseimage;
+    private String url;
 
     public String getCoursename() {
         return coursename;
@@ -35,15 +36,23 @@ public class Final {
         this.courseimage = courseimage;
     }
 
-    public Final(String coursename, String coursedescription, String courseimage) {
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Final() {
+
+    }
+
+    public Final(String coursename, String coursedescription, String courseimage, String url) {
+
         this.coursename = coursename;
         this.coursedescription = coursedescription;
         this.courseimage = courseimage;
-    }
-
-
-
-
-    public Final() {
+        this.url = url;
     }
 }
