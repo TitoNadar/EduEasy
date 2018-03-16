@@ -9,6 +9,9 @@ import tito.example.com.edueasy.Modal.Books.Response;
  */
 
 public interface Book_Service {
-@GET("v1/search/")
+@GET("v1/search/android")
     Call<Response> getBookService();
+@GET("v1/search/")
+    Call<Response> getSpecialBooksService();
+
 }
