@@ -43,7 +43,7 @@ public class Courses extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("yash","reached");
+
         View view = inflater.inflate(R.layout.content_main, container, false);
             recyclerView = view.findViewById(R.id.recyclerview);
             layoutManager=new LinearLayoutManager(getContext());
@@ -52,7 +52,7 @@ public class Courses extends Fragment {
            udacity_service.getUdacityService().enqueue(new Callback<Response>() {
                @Override
                public void onResponse(retrofit.Response<Response> response, Retrofit retrofit) {
-                   Log.d("tito","reached");
+
                    udacity_response=response.body().getCourses();
                    Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),udacity_response);
                    recyclerView.setAdapter(courses_adapter);
@@ -60,7 +60,7 @@ public class Courses extends Fragment {
 
                @Override
                public void onFailure(Throwable t) {
-                   Log.d("divyam",t.getMessage());
+
                }
            });
         return view;
