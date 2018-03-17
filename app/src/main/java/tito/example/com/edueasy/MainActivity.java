@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_Events) {
 
-        } else if (id == R.id.nav_Settings) {
+        } else if (id == R.id.nav_news) {
 
         } else if (id == R.id.nav_share) {
 

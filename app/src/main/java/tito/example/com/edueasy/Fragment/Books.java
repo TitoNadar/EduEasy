@@ -74,12 +74,7 @@ public class Books extends Fragment {
 
             }
         });
-        swipeRefreshLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                load(true);
-            }
-        });
+
 
         return view;
     }
