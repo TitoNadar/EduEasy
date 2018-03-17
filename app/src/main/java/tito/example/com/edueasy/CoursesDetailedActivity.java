@@ -35,7 +35,7 @@ String name,description,url,image;
         }
         course_name.setText(name);
         course_description.setText(description);
-        Picasso.get().load(image).into(course_image);
+        Picasso.with(this).load(image).into(course_image);
                 floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

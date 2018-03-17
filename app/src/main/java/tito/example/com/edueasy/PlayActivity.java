@@ -26,7 +26,7 @@ WebView webView;
         });
         if(getIntent()!=null)
         {
-            if(!getIntent().getStringExtra("url").isEmpty())
+            if(getIntent().getStringExtra("url")!=null)
             {
                 webView.loadUrl(getIntent().getStringExtra("url"));
             }

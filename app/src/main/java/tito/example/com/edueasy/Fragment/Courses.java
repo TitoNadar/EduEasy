@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import dmax.dialog.SpotsDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -38,6 +39,7 @@ public class Courses extends Fragment {
     List<Final> finalList=new ArrayList<>();
     Udacity_Service udacity_service;
    IversitySErvice iversitySErvice;
+    SpotsDialog spotsDialog;
     public Courses() {
     }
 

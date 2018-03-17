@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import dmax.dialog.SpotsDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import tito.example.com.edueasy.Adapter.BooksAdapter;
@@ -31,6 +32,7 @@ public class Books extends Fragment {
    RecyclerView.LayoutManager layoutManager;
 Book_Service book_service;
 List<BooksItem> responses=new ArrayList<>();
+SpotsDialog spotsDialog;
 
    public Books() {
     }

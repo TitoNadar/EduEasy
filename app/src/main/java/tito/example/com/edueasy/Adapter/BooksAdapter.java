@@ -5,7 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +24,14 @@ import tito.example.com.edueasy.R;
 
 class Book_View_Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
    ItemClickListener itemClickListener;
-   TextView title,subtitle,authorname,pageno;
+   TextView title,subtitle,pageno;
+   ImageView book_image;
     public Book_View_Holder(View itemView) {
         super(itemView);
         itemView.setOnClickListener(this);
+        book_image=itemView.findViewById(R.id.book_imageview);
         title=itemView.findViewById(R.id.book_title);
         subtitle=itemView.findViewById(R.id.book_subtitle);
-        authorname=itemView.findViewById(R.id.book_author_name);
         pageno=itemView.findViewById(R.id.book_page_no);
     }
 
@@ -60,7 +65,14 @@ public class BooksAdapter extends RecyclerView.Adapter<Book_View_Holder> {
     public void onBindViewHolder(Book_View_Holder holder, int position) {
        holder.title.setText(booksItems.get(position).getTitle());
        holder.subtitle.setText(booksItems.get(position).getSubTitle());
+Picasso.with(context).load(booksItems.get(position).getImage()).into(holder.book_image);
        holder.pageno.setText("300");
+       holder.setItemClickListener(new ItemClickListener() {
+           @Override
+           public void onClick(View view, int position, boolean isLongClick) {
+               Toast.makeText(context, "booksItems.get(position).getTitle()", Toast.LENGTH_SHORT).show();
+           }
+       });
     }
 
     @Override

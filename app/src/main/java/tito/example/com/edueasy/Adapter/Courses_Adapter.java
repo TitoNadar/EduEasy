@@ -70,14 +70,14 @@ private List<Final> finals=new ArrayList<>();
     public void onBindViewHolder(Courses_View_Holder holder, int position) {
 holder.coursename.setText(finals.get(position).getCoursename());
 holder.coursedescription.setText(finals.get(position).getCoursedescription());
-        Picasso.get().load(finals.get(position).getCourseimage()).into(holder.courseImage);
+        Picasso.with(context).load(finals.get(position).getCourseimage()).into(holder.courseImage);
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent=new Intent(context, CoursesDetailedActivity.class);
                 intent.putExtra("name",finals.get(position).getCoursename());
-                intent.putExtra("image",finals.get(position).getCoursedescription());
-                intent.putExtra("description",finals.get(position).getCourseimage());
+                intent.putExtra("image",finals.get(position).getCourseimage());
+                intent.putExtra("description",finals.get(position).getCoursedescription());
                 intent.putExtra("url",finals.get(position).getUrl());
                 context.startActivity(intent);
             }

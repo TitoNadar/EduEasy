@@ -16,7 +16,7 @@
             android:id="@+id/book_imageview"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher_background"
 
             android:layout_below="@+id/Course_name2"/>
@@ -31,9 +31,7 @@
             android:layout_marginLeft="10dp"
             android:textColor="#000000"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,47 +43,13 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="#000000"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Page Nos."
-                android:textSize="14sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="#000000"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
-                />
-
-
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
             android:layout_marginBottom="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="By"
-                android:textSize="14sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="#000000"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Author_name"
-                android:textSize="14sp"
-                android:id="@+id/book_author_name"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
-                android:textStyle="bold"
-                android:textColor="#000000"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,10 +59,19 @@
                 android:textColor="#000000"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="15dp"
-                android:id="@+id/book_page_no"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                />
 
-        </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:id="@+id/book_page_no"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

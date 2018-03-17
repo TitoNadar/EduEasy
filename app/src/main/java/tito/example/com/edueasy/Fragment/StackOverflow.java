@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import dmax.dialog.SpotsDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -32,6 +33,7 @@ RecyclerView recyclerView;
 RecyclerView.LayoutManager layoutManager;
 Stack_Service stack_service;
 List<ItemsItem> stackresponse=new ArrayList<>();
+    SpotsDialog spotsDialog;
     public StackOverflow() {
     }
 

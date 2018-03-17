@@ -3,6 +3,7 @@ package tito.example.com.edueasy;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+
 public class Profile extends AppCompatActivity {
 
     @Override
