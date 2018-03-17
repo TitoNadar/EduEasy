@@ -102,12 +102,17 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_Home) {
 
         } else if (id == R.id.nav_Events) {
+            Intent intent=new Intent(MainActivity.this,News_activity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_news) {
 
+
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.About_Us) {
+        } else if (id == R.id.Contact_Us) {
+            Intent intent = new Intent(MainActivity.this,ContactUs.class);
+            startActivity(intent);
 
         }
 
@@ -119,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new Courses(), "Courses");
         adapter.addFragment(new Books(), "Books");
-        adapter.addFragment(new StackOverflow(), "StackOverflow");
+        adapter.addFragment(new StackOverflow(), "Doubts");
         viewPager.setAdapter(adapter);
     }
     static class Adapter extends FragmentPagerAdapter {

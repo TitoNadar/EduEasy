@@ -70,7 +70,7 @@ Picasso.with(context).load(booksItems.get(position).getImage()).into(holder.book
        holder.setItemClickListener(new ItemClickListener() {
            @Override
            public void onClick(View view, int position, boolean isLongClick) {
-               Toast.makeText(context, "booksItems.get(position).getTitle()", Toast.LENGTH_SHORT).show();
+               Toast.makeText(context, ""+booksItems.get(position).getTitle(), Toast.LENGTH_SHORT).show();
            }
        });
     }

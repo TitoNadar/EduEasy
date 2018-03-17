@@ -65,6 +65,7 @@ List<ItemsItem> stackresponse=new ArrayList<>();
                     stackresponse=response.body().getItems();
                     StackAdapter adapter=new StackAdapter(getActivity(),stackresponse);
                     recyclerView.setAdapter(adapter);
+                    swipeRefreshLayout.setRefreshing(false);
                 }
 
                 @Override
@@ -91,6 +92,7 @@ List<ItemsItem> stackresponse=new ArrayList<>();
                 adapter = new StackAdapter(getActivity(), response.getItems());
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                swipeRefreshLayout.setRefreshing(false);
             } else   //if not have cache
             {
                 spotsDialog.show();
@@ -104,6 +106,7 @@ List<ItemsItem> stackresponse=new ArrayList<>();
 
                         Paper.book().write("cache",new Gson().toJson(response.body()));
                         spotsDialog.dismiss();
+                        swipeRefreshLayout.setRefreshing(false);
                     }
 
                     @Override

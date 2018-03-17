@@ -74,7 +74,12 @@ public class Books extends Fragment {
 
             }
         });
-
+        swipeRefreshLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                load(true);
+            }
+        });
 
         return view;
     }
@@ -88,6 +93,7 @@ public class Books extends Fragment {
                 adapter = new BooksAdapter(getActivity(), response.getBooks());
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                swipeRefreshLayout.setRefreshing(false);
             } else   //if not have cache
             {
                 spotsDialog.show();
@@ -101,6 +107,7 @@ public class Books extends Fragment {
 
                         Paper.book().write("cache",new Gson().toJson(response.body()));
                         spotsDialog.dismiss();
+                        swipeRefreshLayout.setRefreshing(false);
                     }
 
                     @Override

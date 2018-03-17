@@ -98,6 +98,7 @@ public class Courses extends Fragment {
                }
                Courses_Adapter courses_adapter=new Courses_Adapter(getActivity(),finalList);
                recyclerView.setAdapter(courses_adapter);
+               swipeRefreshLayout.setRefreshing(false);
            }
 
 
@@ -138,6 +139,7 @@ public class Courses extends Fragment {
                 adapter = new Courses_Adapter(getActivity(), finalList);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                swipeRefreshLayout.setRefreshing(false);
             } else   //if not have cache
             {
                 spotsDialog.show();
@@ -176,6 +178,7 @@ public class Courses extends Fragment {
 
                         Paper.book().write("cache",new Gson().toJson(response));
                         spotsDialog.dismiss();
+                        swipeRefreshLayout.setRefreshing(false);
 
                     }
 

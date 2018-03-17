@@ -25,7 +25,8 @@
         <activity android:name=".PlayActivity" />
         <activity android:name=".Profile" />
         <activity android:name=".News_activity" />
-        <activity android:name=".DetailArticle"></activity>
+        <activity android:name=".DetailArticle" />
+        <activity android:name=".ContactUs"></activity>
     </application>
 
 </manifest>
