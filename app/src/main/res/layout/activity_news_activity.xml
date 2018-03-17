@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tito.example.com.edueasy.News_activity">
+    android:id="@+id/swipeRefresh"
+    tools:context=".News_activity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.florent37.diagonallayout.DiagonalLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/diagonalLayout"
+            app:diagonal_angle="5"
+            app:diagonal_direction="left"
+            app:diagonal_position="bottom">
+
+            <com.flaviofaria.kenburnsview.KenBurnsView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/top_image"
+                android:scaleType="centerCrop"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/top_author"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="top|left"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:textSize="24sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#A0333639"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/top_title"
+                        android:layout_gravity="top|left"
+                        android:textColor="@android:color/white"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </com.github.florent37.diagonallayout.DiagonalLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listNews"
+            android:layout_below="@+id/diagonalLayout">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+

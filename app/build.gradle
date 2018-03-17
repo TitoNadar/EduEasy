@@ -40,4 +40,8 @@ dependencies {
 
     compile 'io.paperdb:paperdb:2.5'
     compile 'com.github.d-max:spots-dialog:0.7@aar'
+
+    compile 'com.github.florent37:diagonallayout:1.0.7'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.github.curioustechizen.android-ago:library:1.3.4'
 }

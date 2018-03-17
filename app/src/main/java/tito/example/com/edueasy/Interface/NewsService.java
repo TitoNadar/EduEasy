@@ -2,6 +2,7 @@ package tito.example.com.edueasy.Interface;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Url;
 import tito.example.com.edueasy.Modal.News.Response;
 
 /**
@@ -9,6 +10,7 @@ import tito.example.com.edueasy.Modal.News.Response;
  */
 
 public interface NewsService {
-    @GET("top-headlines?sources=techcrunch&apiKey=9c4649f81c00464a814e84614efc7e00")
-    Call<Response> getNews();
+    @GET("")
+    Call<Response> getNews(@Url String url);
 }
+//9c4649f81c00464a814e84614efc7e00
