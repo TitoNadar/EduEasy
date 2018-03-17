@@ -5,7 +5,8 @@
 ### Motivation:
 There were various themes like Traffic congestion, traffic Automation, Women Security, Child Safety needed to be quick and it was the need of an hour to use IoT to the utmost level to find a satisfying solution. While we consider other themes like Easy permission System, Convergence of Various Government Schemes requires a security network but the limitations of Second Generation of BlockChain is preventing us which leaves us to Brainstorm in 3 sections that are Blood Donation, Online Guide, and **Education Quality**, while there can be a delayed solution for Online Guide and as there are several apps for blood donations that made us brainstorm ideas about upscaling the **Education Quality** and thus a prototyped product was formed.
 
-### Build status: Prototype Stage (Complete)
+### Build status:
+Prototype Stage (Complete)
 Production Stage (Under Process) 
 
 ### ScreenShots:
@@ -32,8 +33,11 @@ The UI has been Built by following the designing rules of **Georgia Tech** and *
 Clone and download the project, extract the file locally and import the project on an Android SDK to run and install the app.
 
 ### API reference:
-
-
+1. Udacity_Api = https://www.udacity.com/public-api/v0/
+2. Iversity_Api = https://iversity.org/api/v1/
+3. Books_Api = https://it-ebooks-api.info/v1/search/
+4. StackOverFlow = https://api.stackexchange.com/2.2/search/
+5. News_Url = https://newsapi.org/v2/
 ### Authors:
 1. Tito Nadar        https://github.com/TitoNadar
 2. Divyam Pandya     https://github.com/divyampandya63
