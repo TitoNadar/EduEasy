@@ -1,4 +1,7 @@
 ### **EduEasy Android-App**
+### ICON: ![icon](https://user-images.githubusercontent.com/26847181/37553029-f54087e4-29e5-11e8-9143-ea9e2d3a57e8.png)
+
+
 
 **EasyEdu** is a disruptive app with the amalgamation of most of the top-notch educational apps that provide online courses by acting like a **Trivago for MOOC's**. Over here the app, not only gives you a list view of the best courses offered on various sites but also makes it possible to read about those courses apps, read books related to that topics and also have Stackoverflow in it to solve the doubts. It doesn't end here it also gives us an overview of **"What's happening in the tech world?"** by displaying latest headlines retrieved from **TechCrunch**, Thus Making a one-stop solution to education legally and successfully upscaling the **Education Quality** of the system itself.
 
@@ -10,6 +13,17 @@ Prototype Stage (Complete)
 Production Stage (Under Process) 
 
 ### ScreenShots:
+![whatsapp image 2018-03-17 at 12 51 01 pm](https://user-images.githubusercontent.com/26847181/37553056-4a1524aa-29e6-11e8-91cd-3c28f93034e8.jpeg)
+
+![whatsapp image 2018-03-17 at 12 51 01 pm 1](https://user-images.githubusercontent.com/26847181/37553059-4efb8c8e-29e6-11e8-9f88-72bcc6283577.jpeg)
+
+![whatsapp image 2018-03-17 at 1 01 40 pm](https://user-images.githubusercontent.com/26847181/37553066-6a1cfde0-29e6-11e8-9e58-b7ab9cdc2ec0.jpeg)
+
+![whatsapp image 2018-03-17 at 12 51 01 pm 4](https://user-images.githubusercontent.com/26847181/37553065-62e05cde-29e6-11e8-925b-b81470028028.jpeg)
+
+![whatsapp image 2018-03-17 at 12 51 01 pm 3](https://user-images.githubusercontent.com/26847181/37553064-5e62a8a6-29e6-11e8-9325-78b319eee054.jpeg)
+
+![whatsapp image 2018-03-17 at 12 51 01 pm 2](https://user-images.githubusercontent.com/26847181/37553063-587be344-29e6-11e8-8f9b-689c9c7b6802.jpeg)
 
 ### Tech used:
 Java, Android Studio.
